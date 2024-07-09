@@ -1,0 +1,131 @@
+{% extends "header.html" %}
+{% block title %}Témoignage{% endblock title %}
+{% block message %}Témoignage{% endblock message %}
+{% block texteCar1 %}Témoignages de <br>  Nos Utilisateurs{% endblock texteCar1 %}
+{% block textCar2 %} Nous sommes ravis de partager avec vous quelques témoignages de nos utilisateurs.{% endblock textCar2 %}
+
+{% block content %}
+
+<section class="client_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Témoignages
+      </h2>
+    </div>
+  </div>
+  <div class="container px-0">
+    <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="box">
+            <div class="client_info">
+              <div class="client_name">
+                <h5>
+                    Alice, Étudiante
+                </h5>
+                <h6>
+                  
+                </h6>
+              </div>
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+            </div>
+            <p>
+                La bibliothèque est un véritable havre de paix pour moi. J'adore l'ambiance
+                 calme et les ressources disponibles sont incroyablement variées. Les bibliothécaires sont 
+                toujours prêts à aider, ce qui rend mes recherches beaucoup plus faciles.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="box">
+            <div class="client_info">
+              <div class="client_name">
+                <h5>
+                Marc, Auteur
+                </h5>
+                <h6>
+                  
+                </h6>
+              </div>
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+            </div>
+            <p>
+                En tant qu'écrivain, j'ai trouvé dans cette bibliothèque un espace idéal pour écrire 
+                et me documenter. Les ateliers et les conférences sont également une excellente source
+                 d'inspiration et d'apprentissage.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="box">
+            <div class="client_info">
+              <div class="client_name">
+                <h5>
+                Clara, Mère de famille 
+                </h5>
+                <h6>
+                 
+                </h6>
+              </div>
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+            </div>
+            <p>
+                Mes enfants adorent les activités pour enfants organisées ici.
+                C'est formidable de les voir s'amuser tout en développant leur amour pour la lecture.
+                La section jeunesse est très bien fournie et adaptée à tous les âges
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel_btn-box">
+        <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+</section>
+<!-- end client section -->
+
+<!-- info section -->
+
+<section class="info_section  layout_padding2-top">
+  <div class="social_container">
+    <div class="social_box">
+      <a href="">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-youtube" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+ 
+     
+  <footer class=" footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Yang Bao</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+</section>
+
+<!-- end info section -->
+{% endblock content %}

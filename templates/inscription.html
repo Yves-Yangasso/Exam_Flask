@@ -1,0 +1,82 @@
+{% extends "header.html" %}
+
+{% block title %}Inscription{% endblock title %}
+
+{% block message %}Inscription{% endblock message %}
+
+{% block navBar %}
+<marquee><h3>Veuillez entrer vos informations pour vous inscrire</h3></marquee>
+{% endblock navBar %}
+
+{% block carouselInfo %}
+<div class="">
+    <form action="{{url_for('inscription', role='user')}}" method="post">
+        <div class="m-3">
+          
+        <input type="text" name="username" class="form-control" placeholder="Username ...." >
+        </div>
+
+        <div class="m-3">
+            <input type="email" name="email" class="form-control" placeholder="Email ...." >
+        </div>
+
+        <div class="m-3">
+        <input type="password" name="mdp" class="form-control" placeholder="Mot de passe ...." >
+        </div>
+
+        <div class="m-3 text-center">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+       </div>
+    </form>
+</div>
+
+<span class=""> Vous avez un compte ? <a href="{{url_for('connexion')}}"> Se connecter </a> </span>
+
+<div class="container text-center text-danger">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       {{ messages[0] }}
+    {% endif %}
+  {% endwith %}  
+</div>
+
+{% endblock carouselInfo %}
+
+{% block content %}
+</section>
+<!-- end client section -->
+
+<!-- info section -->
+
+<section class="info_section  layout_padding2-top mt-5">
+  <div class="social_container">
+    <div class="social_box">
+      <a href="">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-youtube" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+ 
+     
+  <footer class=" footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Yang Bao</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+</section>
+
+{% endblock content %}

@@ -1,0 +1,84 @@
+{% extends "header.html" %}
+{% block title %}Acceuil{% endblock title %}
+{% block content %}
+<section class="shop_section layout_padding">
+  <div class="container text-center m-lg-2">
+    <div class="heading_container heading_center">
+      <h2>
+        Livres
+      </h2>
+    </div>
+    <div class="row">
+      {% for livre in  data %}
+
+      <div class="col-sm-6 col-md-3 col-lg-3 bg-secondary rounded m-5">
+        <div class="box card action_livre">
+          <a href="{{url_for('details', id=livre.id)}}">
+            <div class="img-box">
+              <img src="../static/images/{{livre.image}}" alt="">
+            </div>
+            <div class="card-footer bg-info">
+              <h4>{{livre.titre}}</h4>
+              <h6>
+                {{livre.auteur}}
+              </h6>
+              <h6>
+                
+              </h6>
+            </div>
+            <div class="new w-50 bg-success">
+              {% if livre.status == 0 %}
+                  <span class="text-primary">Disponible </span>
+                {% else %}
+                  <span class="text-danger">Indisponible </span>
+                {% endif %}
+            </div> 
+          </a>
+        </div>
+      </div>
+
+      {% endfor %}
+
+      
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+{% block footer %}
+
+<section class="info_section  layout_padding2-top">
+  <div class="social_container">
+    <div class="social_box">
+      <a href="">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-youtube" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+ 
+     
+  <footer class=" footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Yang Bao</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+</section>
+
+<!-- end info section -->
+
+{% endblock footer %}

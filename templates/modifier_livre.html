@@ -1,0 +1,94 @@
+{% extends "header.html" %}
+
+{% block title %}connexion{% endblock title %}
+
+{% block message %}Connexion{% endblock message %}
+
+{% block navBar %}
+<marquee><h2>Veuillez vous connecter avant d'effetuer un emprunt</h2></marquee>
+{% endblock navBar %}
+
+{% block carouselInfo %}
+
+<div class="">
+    <h2 class="text-center mt-5 mb-4">Modifier le Livre</h2>
+<form method="post">
+    <div class="form-group">
+        <label for="titre">Titre</label>
+        <input type="text" class="form-control" id="titre" name="titre" value="{{ livre.titre }}" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required>{{ livre.description }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="auteur">Auteur</label>
+        <input type="text" class="form-control" id="auteur" name="auteur" value="{{ livre.auteur }}" required>
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" id="genre" name="genre" value="{{ livre.genre }}" required>
+    </div>
+    <div class="form-group">
+        <label for="datepub">Année de publication</label>
+        <input type="text" class="form-control" id="datepub" name="datepub" value="{{ livre.datepub }}" required>
+    </div>
+    <div class="form-group">
+        <label for="image">URL de l'image</label>
+        <input type="text" class="form-control" id="image" name="image" value="{{ livre.image }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+</form>
+</div>
+
+<span class=""> Vous avez pas un compte ? <a href="{{url_for('inscription', role='user')}}"> S'inscrire </a> </span>
+
+
+<div class="container text-center text-danger">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       {{ messages[0] }}
+    {% endif %}
+  {% endwith %}  
+</div>
+
+{% endblock carouselInfo %}
+
+{% block content %}
+
+
+</section>
+
+<section class="info_section  layout_padding2-top mt-5">
+  <div class="social_container">
+    <div class="social_box">
+      <a href="">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-youtube" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+ 
+     
+  <footer class=" footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Yang Bao</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+</section>
+
+
+{% endblock content %}

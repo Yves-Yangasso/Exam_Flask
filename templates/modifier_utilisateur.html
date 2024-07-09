@@ -1,0 +1,74 @@
+{% extends "header.html" %}
+
+{% block title %}Modifier mon compte{% endblock title %}
+
+{% block message %}Modifier mon compte{% endblock message %}
+
+{% block navBar %}
+<marquee><h3>Veuillez entrer vos informations pour Modifier mon compte</h3></marquee>
+{% endblock navBar %}
+
+{% block carouselInfo %}
+<div class="">
+    <form action="{{url_for('modifier_utilisateur', user_id=utilisateur.id)}}" method="post">
+        <div class="m-3">
+          
+        <input type="text" name="username" class="form-control" placeholder="Username ...." value="{{ utilisateur.username }}">
+        </div>
+
+        <div class="m-3">
+            <input type="email" name="email" class="form-control" placeholder="Email ...." value="{{ utilisateur.email }}">
+        </div>
+
+        <div class="m-3">
+        <input type="password" name="mdp" class="form-control" placeholder="Mot de passe ...." >
+        </div>
+
+        <div class="m-3 text-center">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+       </div>
+    </form>
+</div>
+
+<span class=""> Vous avez un compte ? <a href="{{url_for('connexion')}}"> Se connecter </a> </span>
+
+{% endblock carouselInfo %}
+
+{% block content %}
+</section>
+<!-- end client section -->
+
+<!-- info section -->
+
+<section class="info_section  layout_padding2-top mt-5">
+  <div class="social_container">
+    <div class="social_box">
+      <a href="">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-youtube" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+ 
+     
+  <footer class=" footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Yang Bao</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+</section>
+
+{% endblock content %}

@@ -1,0 +1,100 @@
+{% extends "header.html" %}
+{% block title %}{{data.titre}}{% endblock title %}
+{% block message %}{{data.titre}}{% endblock message %}
+{% block texteCar1 %}Contacts de la <br> Bibliothèque{% endblock texteCar1 %}
+{% block textCar2 %}Nous serions ravis de répondre à toutes vos questions et de vous aider dans vos recherches. {%endblock textCar2 %}
+
+{% block content %}
+
+
+<div class="box card m-3 ">
+
+    <div class="row m-3">
+        <div class="col col-lg-5 card">
+            <div class="card-body">
+                <img src="../static/images/{{data.image}}" alt="" width=400 height=300>
+            </div>
+        </div>
+
+        <div class="col col-lg-6 card" style="margin-left:30px">
+            <div class="bg-success rounded-circle text-center text-capitalize m-2">
+                {% if data.status == 0 %}
+                <span class="text-primary">Disponible </span>
+                {% else %}
+                    <span class="text-danger">Indisponible </span>
+                {% endif %}
+            </div>
+
+            <div class="card-body">
+            <h2 class="text-center"> <strong> Titre : </strong> {{data.titre}}</h2>
+            <h5 class="text-center">
+                <strong> Auteur : </strong> {{data.auteur}}
+            </h5>
+            <span> <strong> L’année de publication : </strong> {{data.datepub}}<span> <hr>
+            <h6> <strong> Description </strong> </h6>
+            <p>{{data.description}} </P>
+
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% if current_user.is_authenticated %}
+<form method="post" action="{{url_for('details', id=data.id)}}">
+  <div class="d-flex text-center m-3">
+      <input type="number" name="dure" id="dure" placeholder="Nombre de jours..." class="form-control w-50" style="margin-left:150px">
+      <input type="submit" name="submit" class="btn btn-primary" style="margin-left:30px" value="Emprunter">
+  </div>
+</form>
+
+<div class="container text-center text-danger">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       {{ messages[0] }}
+    {% endif %}
+  {% endwith %}  
+</div>
+
+ {% endif %}
+
+   
+
+
+
+<!-- info section -->
+
+<section class="info_section  layout_padding2-top mt-5">
+  <div class="social_container">
+    <div class="social_box">
+      <a href="">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-youtube" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+ 
+     
+  <footer class=" footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Yang Bao</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+</section>
+
+<!-- end info section -->
+{% endblock content %}
